@@ -7,10 +7,16 @@ package Formularios;
 
 import DSources.*;
 import DBConexiones.ConexionDB;
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.help.HelpBroker;
+import javax.help.HelpSet;
+import javax.help.HelpSetException;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -72,6 +78,8 @@ public class FMenPrincipal extends javax.swing.JFrame {
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuAyuda = new javax.swing.JMenuItem();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -218,6 +226,13 @@ public class FMenPrincipal extends javax.swing.JFrame {
         jMenu5.add(jMenuItem6);
 
         jMenuBar2.add(jMenu5);
+
+        jMenu4.setText("Ayuda");
+
+        jMenuAyuda.setText("Ayuda en linea");
+        jMenu4.add(jMenuAyuda);
+
+        jMenuBar2.add(jMenu4);
 
         setJMenuBar(jMenuBar2);
 
@@ -434,6 +449,33 @@ public class FMenPrincipal extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
+        
+        
+        // 1. Localizar el archivo help_set.hs
+        File fichero = new File("." + File.separator + "Ayuda" + File.separator + "help_set.hs");
+        URL hsURL = null;
+        try {
+            hsURL = fichero.toURI().toURL();
+        } catch (MalformedURLException ex) {
+            System.getLogger(FMenPrincipal.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+
+        // 2. Crear el HelpSet y el HelpBroker
+        HelpSet hs = null;
+        try {
+            hs = new HelpSet(getClass().getClassLoader(), hsURL);
+        } catch (HelpSetException ex) {
+            System.getLogger(FMenPrincipal.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+        HelpBroker hb = hs.createHelpBroker();
+
+        // 3. Vincular al botón del menú y a la tecla F1
+        // "Men_Principal" debe coincidir con un ID en tu map_file.jhm
+        hb.enableHelpOnButton(jMenuAyuda, "intro", hs); 
+        hb.enableHelpKey(getRootPane(), "intro", hs);
+        
+        
+        
         this.setResizable(false); 
         this.setLocationRelativeTo(null); 
         
@@ -507,8 +549,10 @@ public class FMenPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenuAutenti;
+    private javax.swing.JMenuItem jMenuAyuda;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuCerrar;
