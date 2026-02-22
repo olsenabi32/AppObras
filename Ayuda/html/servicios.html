@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    
 <head>
     <meta charset="ISO-8859-1">
     <style>
@@ -15,20 +16,19 @@
 </style>
 </head>
 <body>
-    <h1>Centro de Reportes</h1>
+    <h1>Gestión de Servicios Diarios</h1>
 <div class="card">
-    <p>Generación de documentación técnica y económica para la dirección y el cliente.</p>
+    <p>Módulo destinado al registro de partes de trabajo y consumo de recursos.</p>
 </div>
 
-<h2>Procedimiento de Exportación</h2>
-<ol>
-    <li>Seleccione el <b>Rango de Fechas</b> (Inicio y Fin).</li>
-    <li>Filtre por <b>Tipo de Obra</b> si es necesario.</li>
-    <li>Haga clic en el botón de la impresora para generar el PDF.</li>
-</ol>
+<h2>Control de Acceso por Rol</h2>
+<ul>
+    <li><b>Administrador:</b> Puede editar partes de cualquier fecha.</li>
+    <li><b>Operario:</b> Solo puede visualizar sus servicios asignados y reportar horas del día actual.</li>
+</ul>
 
-<div class="info-box">
-    <b>Formatos disponibles:</b> Actualmente los informes se generan en formato .PDF y .HTML compatible con cualquier navegador.
+<div class="error-box">
+    <b>⚠️ Límite de Horas:</b> El sistema bloqueará cualquier registro que supere las 12 horas diarias por trabajador por seguridad laboral.
 </div>
 </body>
 </html>

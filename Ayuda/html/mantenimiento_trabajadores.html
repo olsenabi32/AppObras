@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    
 <head>
     <meta charset="ISO-8859-1">
     <style>
@@ -15,20 +16,23 @@
 </style>
 </head>
 <body>
-    <h1>Centro de Reportes</h1>
+    <h1>Gestión de Personal</h1>
 <div class="card">
-    <p>Generación de documentación técnica y económica para la dirección y el cliente.</p>
+    <p>Este módulo permite administrar el censo de operarios y técnicos de la empresa. Es fundamental para la asignación posterior en las obras.</p>
 </div>
 
-<h2>Procedimiento de Exportación</h2>
-<ol>
-    <li>Seleccione el <b>Rango de Fechas</b> (Inicio y Fin).</li>
-    <li>Filtre por <b>Tipo de Obra</b> si es necesario.</li>
-    <li>Haga clic en el botón de la impresora para generar el PDF.</li>
-</ol>
+<h2>Registro de Datos</h2>
+<ul>
+    <li><b>Alta:</b> Introduzca los datos personales. El sistema validará automáticamente el DNI.</li>
+    <li><b>Modificación:</b> Seleccione un trabajador de la lista para editar su categoría o contacto.</li>
+</ul>
 
-<div class="info-box">
-    <b>Formatos disponibles:</b> Actualmente los informes se generan en formato .PDF y .HTML compatible con cualquier navegador.
+<div class="error-box">
+    <b>Validación de DNI:</b> El sistema no permitirá guardar si el DNI no cumple el formato (8 números + letra) o si el algoritmo de la letra es incorrecto.
+</div>
+
+<div class="error-box">
+    <b> Registros Duplicados:</b> No se permite la entrada de dos trabajadores con el mismo identificador fiscal.
 </div>
 </body>
 </html>

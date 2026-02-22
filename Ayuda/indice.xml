@@ -1,6 +1,14 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
 
 <index version="1.0">
-    <indexitem text="Bienvenida" target="intro"/>
-    <indexitem text="Mantenimiento" target="mantenimiento"/>
-    <indexitem text="Informes" target="informes"/>
+    <indexitem text="Bienvenida y Roles" target="intro"/>
+    
+    <indexitem text="Mantenimiento de Trabajadores" target="mantenimiento_trabajadores"/>
+    
+    <indexitem text="Mantenimiento de Obras" target="mantenimiento_obras"/>
+
+    
+    <indexitem text="Servicios y Operarios" target="servicios"/>
+    
+    <indexitem text="Informes y Reportes" target="informes"/>
 </index>

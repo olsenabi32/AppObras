@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='ISO-8859-1' ?>
 <map version="1.0">
    <mapID target="intro" url="html/intro.html" />
-   <mapID target="mantenimiento" url="html/mantenimiento.html" />
+   <mapID target="mantenimiento_trabajadores" url="html/mantenimiento_trabajadores.html" />
+   <mapID target="mantenimiento_obras" url="html/mantenimiento_obras.html" />
+   <mapID target="servicios" url="html/servicios.html" />
    <mapID target="informes" url="html/informes.html" />
 </map>

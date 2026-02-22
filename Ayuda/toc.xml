@@ -1,8 +1,10 @@
-
-
+<?xml version='1.0' encoding='ISO-8859-1' ?>
 <toc version="1.0">
-   <tocitem text="Ayuda de AppObras" target="intro">
-      <tocitem text="Gestión de Mantenimiento" target="mantenimiento" />
-      <tocitem text="Generación de Informes" target="informes" />
+   <tocitem text="Manual de AppObras" target="intro">
+      <tocitem text="Acceso y Roles" target="intro" />
+      <tocitem text="Mantenimiento Trabajadores" target="mantenimiento_trabajadores" />
+      <tocitem text="Mantenimiento Obras" target="mantenimiento_obras" />
+      <tocitem text="Gestión de Servicios" target="servicios" />
+      <tocitem text="Reportes e Informes" target="informes" />
    </tocitem>
 </toc>
